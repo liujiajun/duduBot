@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+venv/
+
+bot_config_private.json
+
+.gcloudignore
+
+.idea
