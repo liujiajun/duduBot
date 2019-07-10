@@ -1,3 +1,6 @@
 {
-  "OPEN_WEATHER_APPID": ""
+  "dialogflow_project_id": "",
+  "dialogflow_credential_path": "",
+  "open_weather_appid": "",
+  "telegram_token": ""
 }

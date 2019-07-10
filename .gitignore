@@ -5,6 +5,7 @@ __pycache__/
 venv/
 
 bot_config_private.json
+dialogflow_credential.json
 
 .gcloudignore
 
