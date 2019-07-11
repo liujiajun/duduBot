@@ -17,7 +17,7 @@ class TelegramBot:
         self.dispatcher.add_handler(text_handler)
 
         logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                            level=logging.DEBUG)
+                            level=logging.INFO)
 
     def start(self):
         self.updater.start_polling()
