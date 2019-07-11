@@ -11,7 +11,7 @@ class DialogflowClient:
         self.sessionClient = dialogflow.SessionsClient(credentials=self.credential)
         self.projectId = config['dialogflow_project_id']
 
-    def detectIntect(self, sessionId, text, languageCode='en-US'):
+    def detectIntent(self, sessionId, text, languageCode='en-US'):
         session = self.sessionClient.session_path(self.projectId, sessionId)
         print('Session path: {}\n'.format(session))
 

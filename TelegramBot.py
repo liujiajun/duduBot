@@ -25,7 +25,7 @@ class TelegramBot:
     def _receiveText(self, bot, update):
         print(update.message.chat_id)
         bot.send_chat_action(chat_id=update.message.chat_id, action='TYPING')
-        reply = self.dfClient.detectIntect(update.message.chat_id, update.message.text)
+        reply = self.dfClient.detectIntent(update.message.chat_id, update.message.text)
         bot.send_message(chat_id=update.message.chat_id, text=reply)
 
     def _receiveImage(self, update, context):
