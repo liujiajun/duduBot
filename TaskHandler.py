@@ -16,10 +16,15 @@ class TaskHandler:
     def handle(self):
         if self.taskType == 'weather' or self.taskType == 'weather - location':
             return self.handleWeather()
+        elif self.taskType == 'waste classification':
+            return self.hadnleWasteClassification()
         elif self.taskType == 'easter egg':
             return self.handleEasterEgg()
         else:
             return self._replyText("I don't know what to do.")
+
+    # ==================================================================
+    # Handling starts
 
     def handleWeather(self):
 
@@ -49,6 +54,28 @@ class TaskHandler:
             to_degree_celsius(temp_min)
         )
         return self._replyText(reply)
+
+    def hadnleWasteClassification(self):
+
+        if self.parameters['Garbage'] == '':
+            return self._replyText("Please provide the waste name in your query.")
+
+        url = 'https://sffc.sh-service.com/wx_miniprogram/sites/feiguan/trashTypes_2/Handler/Handler.ashx?a=GET_KEYWORDS&kw={}'.format(self.parameters['Garbage'])
+
+        try:
+            res = requests.get(url).json()
+            print(res)
+            if res['kw_list'] == None:
+                return self._replyText("Sorry. I'm not sure.")
+            else:
+                reply = ''
+                for item in res['kw_arr']:
+                    reply += "{} belongs to {}.\n".format(item['Name'], item['TypeKey'])
+                return self._replyText(reply.strip('\n'))
+
+        except Exception:
+            return self._replyText("Sorry. I had a problem retrieving data.")
+
 
     def handleEasterEgg(self):
         time1 = datetime(2018, 7, 7)
