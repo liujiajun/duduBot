@@ -1,5 +1,6 @@
 Flask
 requests
 dialogflow
-python-telegram-bot
-google
+python-telegram-bot==11.1.0
+google-cloud-datastore
+gunicorn
