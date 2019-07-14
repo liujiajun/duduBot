@@ -1,6 +1,9 @@
 {
   "dialogflow_project_id": "",
   "dialogflow_credential_path": "",
+  "app_engine_host": "",
+  "app_engine_project_id": "",
+  "app_engine_credential_path": "",
   "open_weather_appid": "",
   "telegram_token": ""
 }

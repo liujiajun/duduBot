@@ -43,7 +43,7 @@ class SecretCrush:
 
     def finishAdding(self, bot, update):
         if update.message.text == 'Add a Crush':
-            update.message.reply_text("Great! What's your crush's telegram username?",
+            update.message.reply_text("Great! Who's your crush?",
                                       reply_markup=ReplyKeyboardRemove())
             return FINISH_ADDING
 
@@ -79,7 +79,7 @@ class SecretCrush:
             else:
                 update.message.reply_text("Could you share your crush as a contact? "
                                           "Just click the clip-shaped button left to textbox, then select Contact",
-                                          reply_markup=ReplyKeyboardRemove())
+                                          reply_markup=self.ReplyKeyboardRemove())
                 return FINISH_ADDING
 
     def finishDeleting(self, bot, update):
